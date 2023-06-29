@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="RunnerAll" time="59.139" tests="10" errors="0" skipped="0" failures="1">
+  <properties>
+    <property name="sun.desktop" value="windows"/>
+    <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
+    <property name="java.specification.version" value="11"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
+    <property name="sun.jnu.encoding" value="Cp1252"/>
+    <property name="java.class.path" value="D:\eclipse-workspace\RenalCare\target\test-classes;D:\eclipse-workspace\RenalCare\target\classes;C:\Users\lycya\.m2\repository\org\seleniumhq\selenium\selenium-java\4.10.0\selenium-java-4.10.0.jar;C:\Users\lycya\.m2\repository\org\seleniumhq\selenium\selenium-api\4.10.0\selenium-api-4.10.0.jar;C:\Users\lycya\.m2\repository\org\seleniumhq\selenium\selenium-chrome-driver\4.10.0\selenium-chrome-driver-4.10.0.jar;C:\Users\lycya\.m2\repository\com\google\auto\service\auto-service-annotations\1.0.1\auto-service-annotations-1.0.1.jar;C:\Users\lycya\.m2\repository\com\google\auto\service\auto-service\1.0.1\auto-service-1.0.1.jar;C:\Users\lycya\.m2\repository\com\google\auto\auto-common\1.2\auto-common-1.2.jar;C:\Users\lycya\.m2\repository\com\google\guava\guava\31.1-jre\guava-31.1-jre.jar;C:\Users\lycya\.m2\repository\com\google\guava\failureaccess\1.0.1\failureaccess-1.0.1.jar;C:\Users\lycya\.m2\repository\com\google\guava\listenablefuture\9999.0-empty-to-avoid-conflict-with-guava\listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar;C:\Users\lycya\.m2\repository\com\google\code\findbugs\jsr305\3.0.2\jsr305-3.0.2.jar;C:\Users\lycya\.m2\repository\org\checkerframework\checker-qual\3.12.0\checker-qual-3.12.0.jar;C:\Users\lycya\.m2\repository\com\google\errorprone\error_prone_annotations\2.11.0\error_prone_annotations-2.11.0.jar;C:\Users\lycya\.m2\repository\com\google\j2objc\j2objc-annotations\1.3\j2objc-annotations-1.3.jar;C:\Users\lycya\.m2\repository\org\seleniumhq\selenium\selenium-chromium-driver\4.10.0\selenium-chromium-driver-4.10.0.jar;C:\Users\lycya\.m2\repository\org\seleniumhq\selenium\selenium-json\4.10.0\selenium-json-4.10.0.jar;C:\Users\lycya\.m2\repository\org\seleniumhq\selenium\selenium-manager\4.10.0\selenium-manager-4.10.0.jar;C:\Users\lycya\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v112\4.10.0\selenium-devtools-v112-4.10.0.jar;C:\Users\lycya\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v113\4.10.0\selenium-devtools-v113-4.10.0.jar;C:\Users\lycya\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v114\4.10.0\selenium-devtools-v114-4.10.0.jar;C:\Users\lycya\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v85\4.10.0\selenium-devtools-v85-4.10.0.jar;C:\Users\lycya\.m2\repository\org\seleniumhq\selenium\selenium-edge-driver\4.10.0\selenium-edge-driver-4.10.0.jar;C:\Users\lycya\.m2\repository\org\seleniumhq\selenium\selenium-firefox-driver\4.10.0\selenium-firefox-driver-4.10.0.jar;C:\Users\lycya\.m2\repository\org\seleniumhq\selenium\selenium-http\4.10.0\selenium-http-4.10.0.jar;C:\Users\lycya\.m2\repository\dev\failsafe\failsafe\3.3.1\failsafe-3.3.1.jar;C:\Users\lycya\.m2\repository\org\seleniumhq\selenium\selenium-ie-driver\4.10.0\selenium-ie-driver-4.10.0.jar;C:\Users\lycya\.m2\repository\org\seleniumhq\selenium\selenium-remote-driver\4.10.0\selenium-remote-driver-4.10.0.jar;C:\Users\lycya\.m2\repository\io\netty\netty-buffer\4.1.92.Final\netty-buffer-4.1.92.Final.jar;C:\Users\lycya\.m2\repository\io\netty\netty-codec-http\4.1.92.Final\netty-codec-http-4.1.92.Final.jar;C:\Users\lycya\.m2\repository\io\netty\netty-codec\4.1.92.Final\netty-codec-4.1.92.Final.jar;C:\Users\lycya\.m2\repository\io\netty\netty-handler\4.1.92.Final\netty-handler-4.1.92.Final.jar;C:\Users\lycya\.m2\repository\io\netty\netty-common\4.1.92.Final\netty-common-4.1.92.Final.jar;C:\Users\lycya\.m2\repository\io\netty\netty-transport-classes-epoll\4.1.92.Final\netty-transport-classes-epoll-4.1.92.Final.jar;C:\Users\lycya\.m2\repository\io\netty\netty-transport-classes-kqueue\4.1.92.Final\netty-transport-classes-kqueue-4.1.92.Final.jar;C:\Users\lycya\.m2\repository\io\netty\netty-transport-native-epoll\4.1.92.Final\netty-transport-native-epoll-4.1.92.Final.jar;C:\Users\lycya\.m2\repository\io\netty\netty-transport-native-kqueue\4.1.92.Final\netty-transport-native-kqueue-4.1.92.Final.jar;C:\Users\lycya\.m2\repository\io\netty\netty-transport-native-unix-common\4.1.92.Final\netty-transport-native-unix-common-4.1.92.Final.jar;C:\Users\lycya\.m2\repository\io\netty\netty-transport\4.1.92.Final\netty-transport-4.1.92.Final.jar;C:\Users\lycya\.m2\repository\io\netty\netty-resolver\4.1.92.Final\netty-resolver-4.1.92.Final.jar;C:\Users\lycya\.m2\repository\io\opentelemetry\opentelemetry-api\1.26.0\opentelemetry-api-1.26.0.jar;C:\Users\lycya\.m2\repository\io\opentelemetry\opentelemetry-context\1.26.0\opentelemetry-context-1.26.0.jar;C:\Users\lycya\.m2\repository\io\opentelemetry\opentelemetry-exporter-logging\1.26.0\opentelemetry-exporter-logging-1.26.0.jar;C:\Users\lycya\.m2\repository\io\opentelemetry\opentelemetry-sdk-metrics\1.26.0\opentelemetry-sdk-metrics-1.26.0.jar;C:\Users\lycya\.m2\repository\io\opentelemetry\opentelemetry-extension-incubator\1.26.0-alpha\opentelemetry-extension-incubator-1.26.0-alpha.jar;C:\Users\lycya\.m2\repository\io\opentelemetry\opentelemetry-sdk-logs\1.26.0-alpha\opentelemetry-sdk-logs-1.26.0-alpha.jar;C:\Users\lycya\.m2\repository\io\opentelemetry\opentelemetry-api-logs\1.26.0-alpha\opentelemetry-api-logs-1.26.0-alpha.jar;C:\Users\lycya\.m2\repository\io\opentelemetry\opentelemetry-api-events\1.26.0-alpha\opentelemetry-api-events-1.26.0-alpha.jar;C:\Users\lycya\.m2\repository\io\opentelemetry\opentelemetry-sdk-common\1.26.0\opentelemetry-sdk-common-1.26.0.jar;C:\Users\lycya\.m2\repository\io\opentelemetry\opentelemetry-sdk-extension-autoconfigure-spi\1.26.0\opentelemetry-sdk-extension-autoconfigure-spi-1.26.0.jar;C:\Users\lycya\.m2\repository\io\opentelemetry\opentelemetry-sdk-extension-autoconfigure\1.26.0-alpha\opentelemetry-sdk-extension-autoconfigure-1.26.0-alpha.jar;C:\Users\lycya\.m2\repository\io\opentelemetry\opentelemetry-sdk-trace\1.26.0\opentelemetry-sdk-trace-1.26.0.jar;C:\Users\lycya\.m2\repository\io\opentelemetry\opentelemetry-sdk\1.26.0\opentelemetry-sdk-1.26.0.jar;C:\Users\lycya\.m2\repository\io\opentelemetry\opentelemetry-semconv\1.26.0-alpha\opentelemetry-semconv-1.26.0-alpha.jar;C:\Users\lycya\.m2\repository\net\bytebuddy\byte-buddy\1.14.4\byte-buddy-1.14.4.jar;C:\Users\lycya\.m2\repository\org\apache\commons\commons-exec\1.3\commons-exec-1.3.jar;C:\Users\lycya\.m2\repository\org\asynchttpclient\async-http-client\2.12.3\async-http-client-2.12.3.jar;C:\Users\lycya\.m2\repository\org\asynchttpclient\async-http-client-netty-utils\2.12.3\async-http-client-netty-utils-2.12.3.jar;C:\Users\lycya\.m2\repository\io\netty\netty-codec-socks\4.1.60.Final\netty-codec-socks-4.1.60.Final.jar;C:\Users\lycya\.m2\repository\io\netty\netty-handler-proxy\4.1.60.Final\netty-handler-proxy-4.1.60.Final.jar;C:\Users\lycya\.m2\repository\io\netty\netty-transport-native-epoll\4.1.60.Final\netty-transport-native-epoll-4.1.60.Final-linux-x86_64.jar;C:\Users\lycya\.m2\repository\io\netty\netty-transport-native-kqueue\4.1.60.Final\netty-transport-native-kqueue-4.1.60.Final-osx-x86_64.jar;C:\Users\lycya\.m2\repository\org\reactivestreams\reactive-streams\1.0.3\reactive-streams-1.0.3.jar;C:\Users\lycya\.m2\repository\com\typesafe\netty\netty-reactive-streams\2.0.4\netty-reactive-streams-2.0.4.jar;C:\Users\lycya\.m2\repository\org\slf4j\slf4j-api\1.7.30\slf4j-api-1.7.30.jar;C:\Users\lycya\.m2\repository\com\sun\activation\jakarta.activation\1.2.2\jakarta.activation-1.2.2.jar;C:\Users\lycya\.m2\repository\org\seleniumhq\selenium\selenium-safari-driver\4.10.0\selenium-safari-driver-4.10.0.jar;C:\Users\lycya\.m2\repository\org\seleniumhq\selenium\selenium-support\4.10.0\selenium-support-4.10.0.jar;C:\Users\lycya\.m2\repository\io\cucumber\cucumber-java\7.12.1\cucumber-java-7.12.1.jar;C:\Users\lycya\.m2\repository\io\cucumber\cucumber-core\7.12.1\cucumber-core-7.12.1.jar;C:\Users\lycya\.m2\repository\io\cucumber\cucumber-gherkin\7.12.1\cucumber-gherkin-7.12.1.jar;C:\Users\lycya\.m2\repository\io\cucumber\cucumber-gherkin-messages\7.12.1\cucumber-gherkin-messages-7.12.1.jar;C:\Users\lycya\.m2\repository\io\cucumber\gherkin\26.2.0\gherkin-26.2.0.jar;C:\Users\lycya\.m2\repository\io\cucumber\messages\22.0.0\messages-22.0.0.jar;C:\Users\lycya\.m2\repository\io\cucumber\tag-expressions\5.0.1\tag-expressions-5.0.1.jar;C:\Users\lycya\.m2\repository\io\cucumber\cucumber-expressions\16.1.2\cucumber-expressions-16.1.2.jar;C:\Users\lycya\.m2\repository\io\cucumber\datatable\7.12.1\datatable-7.12.1.jar;C:\Users\lycya\.m2\repository\io\cucumber\cucumber-plugin\7.12.1\cucumber-plugin-7.12.1.jar;C:\Users\lycya\.m2\repository\io\cucumber\docstring\7.12.1\docstring-7.12.1.jar;C:\Users\lycya\.m2\repository\io\cucumber\html-formatter\20.3.1\html-formatter-20.3.1.jar;C:\Users\lycya\.m2\repository\io\cucumber\junit-xml-formatter\0.2.0\junit-xml-formatter-0.2.0.jar;C:\Users\lycya\.m2\repository\io\cucumber\ci-environment\9.2.0\ci-environment-9.2.0.jar;C:\Users\lycya\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\lycya\.m2\repository\io\cucumber\cucumber-junit\7.12.1\cucumber-junit-7.12.1.jar;C:\Users\lycya\.m2\repository\junit\junit\4.13.2\junit-4.13.2.jar;C:\Users\lycya\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="user.variant" value=""/>
+    <property name="java.vendor.url" value="https://openjdk.java.net/"/>
+    <property name="user.timezone" value="America/Sao_Paulo"/>
+    <property name="java.vm.specification.version" value="11"/>
+    <property name="os.name" value="Windows 10"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="BR"/>
+    <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-11.0.16.1\bin"/>
+    <property name="sun.java.command" value="C:\Users\lycya\AppData\Local\Temp\surefire14697064924367416537\surefirebooter5495001615601649842.jar C:\Users\lycya\AppData\Local\Temp\surefire14697064924367416537 2023-06-20T12-35-46_025-jvmRun1 surefire9451632287827780535tmp surefire_011571408602307081098tmp"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="D:\eclipse-workspace\RenalCare\target\test-classes;D:\eclipse-workspace\RenalCare\target\classes;C:\Users\lycya\.m2\repository\org\seleniumhq\selenium\selenium-java\4.10.0\selenium-java-4.10.0.jar;C:\Users\lycya\.m2\repository\org\seleniumhq\selenium\selenium-api\4.10.0\selenium-api-4.10.0.jar;C:\Users\lycya\.m2\repository\org\seleniumhq\selenium\selenium-chrome-driver\4.10.0\selenium-chrome-driver-4.10.0.jar;C:\Users\lycya\.m2\repository\com\google\auto\service\auto-service-annotations\1.0.1\auto-service-annotations-1.0.1.jar;C:\Users\lycya\.m2\repository\com\google\auto\service\auto-service\1.0.1\auto-service-1.0.1.jar;C:\Users\lycya\.m2\repository\com\google\auto\auto-common\1.2\auto-common-1.2.jar;C:\Users\lycya\.m2\repository\com\google\guava\guava\31.1-jre\guava-31.1-jre.jar;C:\Users\lycya\.m2\repository\com\google\guava\failureaccess\1.0.1\failureaccess-1.0.1.jar;C:\Users\lycya\.m2\repository\com\google\guava\listenablefuture\9999.0-empty-to-avoid-conflict-with-guava\listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar;C:\Users\lycya\.m2\repository\com\google\code\findbugs\jsr305\3.0.2\jsr305-3.0.2.jar;C:\Users\lycya\.m2\repository\org\checkerframework\checker-qual\3.12.0\checker-qual-3.12.0.jar;C:\Users\lycya\.m2\repository\com\google\errorprone\error_prone_annotations\2.11.0\error_prone_annotations-2.11.0.jar;C:\Users\lycya\.m2\repository\com\google\j2objc\j2objc-annotations\1.3\j2objc-annotations-1.3.jar;C:\Users\lycya\.m2\repository\org\seleniumhq\selenium\selenium-chromium-driver\4.10.0\selenium-chromium-driver-4.10.0.jar;C:\Users\lycya\.m2\repository\org\seleniumhq\selenium\selenium-json\4.10.0\selenium-json-4.10.0.jar;C:\Users\lycya\.m2\repository\org\seleniumhq\selenium\selenium-manager\4.10.0\selenium-manager-4.10.0.jar;C:\Users\lycya\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v112\4.10.0\selenium-devtools-v112-4.10.0.jar;C:\Users\lycya\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v113\4.10.0\selenium-devtools-v113-4.10.0.jar;C:\Users\lycya\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v114\4.10.0\selenium-devtools-v114-4.10.0.jar;C:\Users\lycya\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v85\4.10.0\selenium-devtools-v85-4.10.0.jar;C:\Users\lycya\.m2\repository\org\seleniumhq\selenium\selenium-edge-driver\4.10.0\selenium-edge-driver-4.10.0.jar;C:\Users\lycya\.m2\repository\org\seleniumhq\selenium\selenium-firefox-driver\4.10.0\selenium-firefox-driver-4.10.0.jar;C:\Users\lycya\.m2\repository\org\seleniumhq\selenium\selenium-http\4.10.0\selenium-http-4.10.0.jar;C:\Users\lycya\.m2\repository\dev\failsafe\failsafe\3.3.1\failsafe-3.3.1.jar;C:\Users\lycya\.m2\repository\org\seleniumhq\selenium\selenium-ie-driver\4.10.0\selenium-ie-driver-4.10.0.jar;C:\Users\lycya\.m2\repository\org\seleniumhq\selenium\selenium-remote-driver\4.10.0\selenium-remote-driver-4.10.0.jar;C:\Users\lycya\.m2\repository\io\netty\netty-buffer\4.1.92.Final\netty-buffer-4.1.92.Final.jar;C:\Users\lycya\.m2\repository\io\netty\netty-codec-http\4.1.92.Final\netty-codec-http-4.1.92.Final.jar;C:\Users\lycya\.m2\repository\io\netty\netty-codec\4.1.92.Final\netty-codec-4.1.92.Final.jar;C:\Users\lycya\.m2\repository\io\netty\netty-handler\4.1.92.Final\netty-handler-4.1.92.Final.jar;C:\Users\lycya\.m2\repository\io\netty\netty-common\4.1.92.Final\netty-common-4.1.92.Final.jar;C:\Users\lycya\.m2\repository\io\netty\netty-transport-classes-epoll\4.1.92.Final\netty-transport-classes-epoll-4.1.92.Final.jar;C:\Users\lycya\.m2\repository\io\netty\netty-transport-classes-kqueue\4.1.92.Final\netty-transport-classes-kqueue-4.1.92.Final.jar;C:\Users\lycya\.m2\repository\io\netty\netty-transport-native-epoll\4.1.92.Final\netty-transport-native-epoll-4.1.92.Final.jar;C:\Users\lycya\.m2\repository\io\netty\netty-transport-native-kqueue\4.1.92.Final\netty-transport-native-kqueue-4.1.92.Final.jar;C:\Users\lycya\.m2\repository\io\netty\netty-transport-native-unix-common\4.1.92.Final\netty-transport-native-unix-common-4.1.92.Final.jar;C:\Users\lycya\.m2\repository\io\netty\netty-transport\4.1.92.Final\netty-transport-4.1.92.Final.jar;C:\Users\lycya\.m2\repository\io\netty\netty-resolver\4.1.92.Final\netty-resolver-4.1.92.Final.jar;C:\Users\lycya\.m2\repository\io\opentelemetry\opentelemetry-api\1.26.0\opentelemetry-api-1.26.0.jar;C:\Users\lycya\.m2\repository\io\opentelemetry\opentelemetry-context\1.26.0\opentelemetry-context-1.26.0.jar;C:\Users\lycya\.m2\repository\io\opentelemetry\opentelemetry-exporter-logging\1.26.0\opentelemetry-exporter-logging-1.26.0.jar;C:\Users\lycya\.m2\repository\io\opentelemetry\opentelemetry-sdk-metrics\1.26.0\opentelemetry-sdk-metrics-1.26.0.jar;C:\Users\lycya\.m2\repository\io\opentelemetry\opentelemetry-extension-incubator\1.26.0-alpha\opentelemetry-extension-incubator-1.26.0-alpha.jar;C:\Users\lycya\.m2\repository\io\opentelemetry\opentelemetry-sdk-logs\1.26.0-alpha\opentelemetry-sdk-logs-1.26.0-alpha.jar;C:\Users\lycya\.m2\repository\io\opentelemetry\opentelemetry-api-logs\1.26.0-alpha\opentelemetry-api-logs-1.26.0-alpha.jar;C:\Users\lycya\.m2\repository\io\opentelemetry\opentelemetry-api-events\1.26.0-alpha\opentelemetry-api-events-1.26.0-alpha.jar;C:\Users\lycya\.m2\repository\io\opentelemetry\opentelemetry-sdk-common\1.26.0\opentelemetry-sdk-common-1.26.0.jar;C:\Users\lycya\.m2\repository\io\opentelemetry\opentelemetry-sdk-extension-autoconfigure-spi\1.26.0\opentelemetry-sdk-extension-autoconfigure-spi-1.26.0.jar;C:\Users\lycya\.m2\repository\io\opentelemetry\opentelemetry-sdk-extension-autoconfigure\1.26.0-alpha\opentelemetry-sdk-extension-autoconfigure-1.26.0-alpha.jar;C:\Users\lycya\.m2\repository\io\opentelemetry\opentelemetry-sdk-trace\1.26.0\opentelemetry-sdk-trace-1.26.0.jar;C:\Users\lycya\.m2\repository\io\opentelemetry\opentelemetry-sdk\1.26.0\opentelemetry-sdk-1.26.0.jar;C:\Users\lycya\.m2\repository\io\opentelemetry\opentelemetry-semconv\1.26.0-alpha\opentelemetry-semconv-1.26.0-alpha.jar;C:\Users\lycya\.m2\repository\net\bytebuddy\byte-buddy\1.14.4\byte-buddy-1.14.4.jar;C:\Users\lycya\.m2\repository\org\apache\commons\commons-exec\1.3\commons-exec-1.3.jar;C:\Users\lycya\.m2\repository\org\asynchttpclient\async-http-client\2.12.3\async-http-client-2.12.3.jar;C:\Users\lycya\.m2\repository\org\asynchttpclient\async-http-client-netty-utils\2.12.3\async-http-client-netty-utils-2.12.3.jar;C:\Users\lycya\.m2\repository\io\netty\netty-codec-socks\4.1.60.Final\netty-codec-socks-4.1.60.Final.jar;C:\Users\lycya\.m2\repository\io\netty\netty-handler-proxy\4.1.60.Final\netty-handler-proxy-4.1.60.Final.jar;C:\Users\lycya\.m2\repository\io\netty\netty-transport-native-epoll\4.1.60.Final\netty-transport-native-epoll-4.1.60.Final-linux-x86_64.jar;C:\Users\lycya\.m2\repository\io\netty\netty-transport-native-kqueue\4.1.60.Final\netty-transport-native-kqueue-4.1.60.Final-osx-x86_64.jar;C:\Users\lycya\.m2\repository\org\reactivestreams\reactive-streams\1.0.3\reactive-streams-1.0.3.jar;C:\Users\lycya\.m2\repository\com\typesafe\netty\netty-reactive-streams\2.0.4\netty-reactive-streams-2.0.4.jar;C:\Users\lycya\.m2\repository\org\slf4j\slf4j-api\1.7.30\slf4j-api-1.7.30.jar;C:\Users\lycya\.m2\repository\com\sun\activation\jakarta.activation\1.2.2\jakarta.activation-1.2.2.jar;C:\Users\lycya\.m2\repository\org\seleniumhq\selenium\selenium-safari-driver\4.10.0\selenium-safari-driver-4.10.0.jar;C:\Users\lycya\.m2\repository\org\seleniumhq\selenium\selenium-support\4.10.0\selenium-support-4.10.0.jar;C:\Users\lycya\.m2\repository\io\cucumber\cucumber-java\7.12.1\cucumber-java-7.12.1.jar;C:\Users\lycya\.m2\repository\io\cucumber\cucumber-core\7.12.1\cucumber-core-7.12.1.jar;C:\Users\lycya\.m2\repository\io\cucumber\cucumber-gherkin\7.12.1\cucumber-gherkin-7.12.1.jar;C:\Users\lycya\.m2\repository\io\cucumber\cucumber-gherkin-messages\7.12.1\cucumber-gherkin-messages-7.12.1.jar;C:\Users\lycya\.m2\repository\io\cucumber\gherkin\26.2.0\gherkin-26.2.0.jar;C:\Users\lycya\.m2\repository\io\cucumber\messages\22.0.0\messages-22.0.0.jar;C:\Users\lycya\.m2\repository\io\cucumber\tag-expressions\5.0.1\tag-expressions-5.0.1.jar;C:\Users\lycya\.m2\repository\io\cucumber\cucumber-expressions\16.1.2\cucumber-expressions-16.1.2.jar;C:\Users\lycya\.m2\repository\io\cucumber\datatable\7.12.1\datatable-7.12.1.jar;C:\Users\lycya\.m2\repository\io\cucumber\cucumber-plugin\7.12.1\cucumber-plugin-7.12.1.jar;C:\Users\lycya\.m2\repository\io\cucumber\docstring\7.12.1\docstring-7.12.1.jar;C:\Users\lycya\.m2\repository\io\cucumber\html-formatter\20.3.1\html-formatter-20.3.1.jar;C:\Users\lycya\.m2\repository\io\cucumber\junit-xml-formatter\0.2.0\junit-xml-formatter-0.2.0.jar;C:\Users\lycya\.m2\repository\io\cucumber\ci-environment\9.2.0\ci-environment-9.2.0.jar;C:\Users\lycya\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\lycya\.m2\repository\io\cucumber\cucumber-junit\7.12.1\cucumber-junit-7.12.1.jar;C:\Users\lycya\.m2\repository\junit\junit\4.13.2\junit-4.13.2.jar;C:\Users\lycya\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="C:\Users\lycya"/>
+    <property name="user.language" value="pt"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2022-08-18"/>
+    <property name="java.home" value="C:\Program Files\Java\jdk-11.0.16.1"/>
+    <property name="file.separator" value="\"/>
+    <property name="basedir" value="D:\eclipse-workspace\RenalCare"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
+    <property name="surefire.real.class.path" value="C:\Users\lycya\AppData\Local\Temp\surefire14697064924367416537\surefirebooter5495001615601649842.jar"/>
+    <property name="user.script" value=""/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="11.0.16.1+1-LTS-1"/>
+    <property name="user.name" value="lycya"/>
+    <property name="path.separator" value=";"/>
+    <property name="os.version" value="10.0"/>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="file.encoding" value="Cp1252"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="java.vendor.version" value="18.9"/>
+    <property name="localRepository" value="C:\Users\lycya\.m2\repository"/>
+    <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/"/>
+    <property name="java.io.tmpdir" value="C:\Users\lycya\AppData\Local\Temp\"/>
+    <property name="java.version" value="11.0.16.1"/>
+    <property name="user.dir" value="D:\eclipse-workspace\RenalCare"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="java.awt.printerjob" value="sun.awt.windows.WPrinterJob"/>
+    <property name="sun.os.patch.level" value=""/>
+    <property name="java.library.path" value="C:\Program Files\Java\jdk-11.0.16.1\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;C:\Users\lycya\AppData\Local\Programs\Python\Python311\Scripts\;C:\Users\lycya\AppData\Local\Programs\Python\Python311\;C:\Users\lycya\AppData\Local\Microsoft\WindowsApps;C:\Users\lycya\OneDrive\Documentos\Maven\apache-maven-4.0.0-alpha-3\bin;;C:\Users\lycya\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\lycya\AppData\Roaming\npm;."/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.vm.version" value="11.0.16.1+1-LTS-1"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="55.0"/>
+  </properties>
+  <testcase name="Esqueci a senha #1" classname="Esqueci Senha" time="5.582">
+    <system-out><![CDATA[
+@web @senha
+Scenario Outline: Esqueci a senha         &amp#27;[90m# src/test/java/features/EsqueceuSenhaRC.feature:15&amp#27;[0m
+  &amp#27;[32mGiven &amp#27;[0m&amp#27;[32mestar na tela login&amp#27;[0m               &amp#27;[90m# EsqueceuSenha.EsqueceuSenhaRC.estar_na_tela_login()&amp#27;[0m
+  &amp#27;[32mAnd &amp#27;[0m&amp#27;[32mclicar em &amp#27;[0m&amp#27;[32m&amp#27;[1m"Esqueceu a senha?"&amp#27;[0m       &amp#27;[90m# EsqueceuSenha.EsqueceuSenhaRC.clicar_em(java.lang.String)&amp#27;[0m
+  &amp#27;[32mWhen &amp#27;[0m&amp#27;[32mabrir a tela para digitar email&amp#27;[0m    &amp#27;[90m# EsqueceuSenha.EsqueceuSenhaRC.abrir_a_tela_para_digitar_email()&amp#27;[0m
+  &amp#27;[32mAnd &amp#27;[0m&amp#27;[32mdigitar o &amp#27;[0m&amp#27;[32m&amp#27;[1m"testesenha@gmail.com"&amp#27;[0m    &amp#27;[90m# EsqueceuSenha.EsqueceuSenhaRC.digitar_o(java.lang.String)&amp#27;[0m
+  &amp#27;[32mAnd &amp#27;[0m&amp#27;[32mclicar no botao &amp#27;[0m&amp#27;[32m&amp#27;[1m"Esqueci a senha"&amp#27;[0m   &amp#27;[90m# EsqueceuSenha.EsqueceuSenhaRC.clicar_no_botao(java.lang.String)&amp#27;[0m
+  &amp#27;[32mThen &amp#27;[0m&amp#27;[32mmostrara a &amp#27;[0m&amp#27;[32m&amp#27;[1m"Verifique o seu email"&amp#27;[0m &amp#27;[90m# EsqueceuSenha.EsqueceuSenhaRC.mostrara_a(java.lang.String)&amp#27;[0m
+]]></system-out>
+    <system-err><![CDATA[jun 20, 2023 12:35:47 PM org.openqa.selenium.remote.service.DriverService$Builder getLogOutput
+INFO: Driver logs no longer sent to console by default; https://www.selenium.dev/documentation/webdriver/drivers/service/#setting-log-output
+SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+]]></system-err>
+  </testcase>
+  <testcase name="Esqueci a senha #2" classname="Esqueci Senha" time="4.56">
+    <system-out><![CDATA[
+@web @senha
+Scenario Outline: Esqueci a senha       &amp#27;[90m# src/test/java/features/EsqueceuSenhaRC.feature:16&amp#27;[0m
+  &amp#27;[32mGiven &amp#27;[0m&amp#27;[32mestar na tela login&amp#27;[0m             &amp#27;[90m# EsqueceuSenha.EsqueceuSenhaRC.estar_na_tela_login()&amp#27;[0m
+  &amp#27;[32mAnd &amp#27;[0m&amp#27;[32mclicar em &amp#27;[0m&amp#27;[32m&amp#27;[1m"Esqueceu a senha?"&amp#27;[0m     &amp#27;[90m# EsqueceuSenha.EsqueceuSenhaRC.clicar_em(java.lang.String)&amp#27;[0m
+  &amp#27;[32mWhen &amp#27;[0m&amp#27;[32mabrir a tela para digitar email&amp#27;[0m  &amp#27;[90m# EsqueceuSenha.EsqueceuSenhaRC.abrir_a_tela_para_digitar_email()&amp#27;[0m
+  &amp#27;[32mAnd &amp#27;[0m&amp#27;[32mdigitar o &amp#27;[0m&amp#27;[32m&amp#27;[1m"teste@gmail.com"&amp#27;[0m       &amp#27;[90m# EsqueceuSenha.EsqueceuSenhaRC.digitar_o(java.lang.String)&amp#27;[0m
+  &amp#27;[32mAnd &amp#27;[0m&amp#27;[32mclicar no botao &amp#27;[0m&amp#27;[32m&amp#27;[1m"Esqueci a senha"&amp#27;[0m &amp#27;[90m# EsqueceuSenha.EsqueceuSenhaRC.clicar_no_botao(java.lang.String)&amp#27;[0m
+  &amp#27;[32mThen &amp#27;[0m&amp#27;[32mmostrara a &amp#27;[0m&amp#27;[32m&amp#27;[1m"Email invÃ¡lido"&amp#27;[0m      &amp#27;[90m# EsqueceuSenha.EsqueceuSenhaRC.mostrara_a(java.lang.String)&amp#27;[0m
+]]></system-out>
+    <system-err><![CDATA[jun 20, 2023 12:35:53 PM org.openqa.selenium.remote.service.DriverService$Builder getLogOutput
+INFO: Driver logs no longer sent to console by default; https://www.selenium.dev/documentation/webdriver/drivers/service/#setting-log-output
+]]></system-err>
+  </testcase>
+  <testcase name="Campo email vazio" classname="Esqueci Senha vazio" time="3.253">
+    <failure message="expected:&lt;...1.232.138:3000/auth/[forgot]&gt; but was:&lt;...1.232.138:3000/auth/[login]&gt;" type="org.junit.ComparisonFailure"><![CDATA[org.junit.ComparisonFailure: expected:<...1.232.138:3000/auth/[forgot]> but was:<...1.232.138:3000/auth/[login]>
+]]></failure>
+    <system-out><![CDATA[
+@web @senha @vazio
+Scenario Outline: Campo email vazio            &amp#27;[90m# src/test/java/features/EsqueceuSenhaVazio.feature:15&amp#27;[0m
+  &amp#27;[32mGiven &amp#27;[0m&amp#27;[32mestar no login&amp#27;[0m                         &amp#27;[90m# EsqueceuSenha.EsqueceuSenhaVazioRC.estar_no_login()&amp#27;[0m
+  &amp#27;[32mAnd &amp#27;[0m&amp#27;[32mclicar no &amp#27;[0m&amp#27;[32m&amp#27;[1m"Esqueceu a senha?"&amp#27;[0m            &amp#27;[90m# EsqueceuSenha.EsqueceuSenhaVazioRC.clicar_no(java.lang.String)&amp#27;[0m
+  &amp#27;[31mWhen &amp#27;[0m&amp#27;[31mabrir a tela para inserir email&amp#27;[0m         &amp#27;[90m# EsqueceuSenha.EsqueceuSenhaVazioRC.abrir_a_tela_para_inserir_email()&amp#27;[0m
+      &amp#27;[31morg.junit.ComparisonFailure: expected:<...1.232.138:3000/auth/[forgot]> but was:<...1.232.138:3000/auth/[login]>
+	at org.junit.Assert.assertEquals(Assert.java:117)
+	at org.junit.Assert.assertEquals(Assert.java:146)
+	at EsqueceuSenha.EsqueceuSenhaVazioRC.abrir_a_tela_para_inserir_email(EsqueceuSenhaVazioRC.java:41)
+	at âœ½.abrir a tela para inserir email(file:///D:/eclipse-workspace/RenalCare/src/test/java/features/EsqueceuSenhaVazio.feature:9)
+&amp#27;[0m
+  &amp#27;[36mAnd &amp#27;[0m&amp#27;[36mdigitar &amp#27;[0m&amp#27;[36m&amp#27;[1m""&amp#27;[0m                               &amp#27;[90m# EsqueceuSenha.EsqueceuSenhaVazioRC.digitar(java.lang.String)&amp#27;[0m
+  &amp#27;[36mThen &amp#27;[0m&amp#27;[36mmostrara &amp#27;[0m&amp#27;[36m&amp#27;[1m"O campo E-mail Ã© obrigatÃ³rio"&amp#27;[0m &amp#27;[90m# EsqueceuSenha.EsqueceuSenhaVazioRC.mostrara(java.lang.String)&amp#27;[0m
+]]></system-out>
+    <system-err><![CDATA[jun 20, 2023 12:35:57 PM org.openqa.selenium.remote.service.DriverService$Builder getLogOutput
+INFO: Driver logs no longer sent to console by default; https://www.selenium.dev/documentation/webdriver/drivers/service/#setting-log-output
+]]></system-err>
+  </testcase>
+  <testcase name=": E-mail e/ou senha invalidos #1" classname="Login e/ou senha invalido" time="4.704">
+    <system-out><![CDATA[
+@web @login @invalido
+Scenario Outline: : E-mail e/ou senha invalidos &amp#27;[90m# src/test/java/features/LoginInvalidoRC.feature:15&amp#27;[0m
+  &amp#27;[32mGiven &amp#27;[0m&amp#27;[32mestar na tela de login RC&amp#27;[0m               &amp#27;[90m# logins.LoginInvalidoRC.estar_na_tela_de_login_rc()&amp#27;[0m
+  &amp#27;[32mWhen &amp#27;[0m&amp#27;[32minserir e-mail &amp#27;[0m&amp#27;[32m&amp#27;[1m"lucasycosta@gmail.com"&amp#27;[0m   &amp#27;[90m# logins.LoginInvalidoRC.inserir_e_mail(java.lang.String)&amp#27;[0m
+  &amp#27;[32mAnd &amp#27;[0m&amp#27;[32minserir senha &amp#27;[0m&amp#27;[32m&amp#27;[1m"895151"&amp#27;[0m                    &amp#27;[90m# logins.LoginInvalidoRC.inserir_senha(java.lang.String)&amp#27;[0m
+  &amp#27;[32mAnd &amp#27;[0m&amp#27;[32mclique em â€œEntrarâ€�&amp#27;[0m                        &amp#27;[90m# logins.LoginInvalidoRC.clique_em_entrar()&amp#27;[0m
+  &amp#27;[32mThen &amp#27;[0m&amp#27;[32mapresenta &amp#27;[0m&amp#27;[32m&amp#27;[1m"Login e/ou senha invÃ¡lido(s)"&amp#27;[0m &amp#27;[90m# logins.LoginInvalidoRC.apresenta(java.lang.String)&amp#27;[0m
+]]></system-out>
+    <system-err><![CDATA[jun 20, 2023 12:36:00 PM org.openqa.selenium.remote.service.DriverService$Builder getLogOutput
+INFO: Driver logs no longer sent to console by default; https://www.selenium.dev/documentation/webdriver/drivers/service/#setting-log-output
+]]></system-err>
+  </testcase>
+  <testcase name=": E-mail e/ou senha invalidos #2" classname="Login e/ou senha invalido" time="8.383">
+    <system-out><![CDATA[
+@web @login @invalido
+Scenario Outline: : E-mail e/ou senha invalidos &amp#27;[90m# src/test/java/features/LoginInvalidoRC.feature:16&amp#27;[0m
+  &amp#27;[32mGiven &amp#27;[0m&amp#27;[32mestar na tela de login RC&amp#27;[0m               &amp#27;[90m# logins.LoginInvalidoRC.estar_na_tela_de_login_rc()&amp#27;[0m
+  &amp#27;[32mWhen &amp#27;[0m&amp#27;[32minserir e-mail &amp#27;[0m&amp#27;[32m&amp#27;[1m"teste@gmail.com"&amp#27;[0m         &amp#27;[90m# logins.LoginInvalidoRC.inserir_e_mail(java.lang.String)&amp#27;[0m
+  &amp#27;[32mAnd &amp#27;[0m&amp#27;[32minserir senha &amp#27;[0m&amp#27;[32m&amp#27;[1m"782166"&amp#27;[0m                    &amp#27;[90m# logins.LoginInvalidoRC.inserir_senha(java.lang.String)&amp#27;[0m
+  &amp#27;[32mAnd &amp#27;[0m&amp#27;[32mclique em â€œEntrarâ€�&amp#27;[0m                        &amp#27;[90m# logins.LoginInvalidoRC.clique_em_entrar()&amp#27;[0m
+  &amp#27;[32mThen &amp#27;[0m&amp#27;[32mapresenta &amp#27;[0m&amp#27;[32m&amp#27;[1m"Login e/ou senha invÃ¡lido(s)"&amp#27;[0m &amp#27;[90m# logins.LoginInvalidoRC.apresenta(java.lang.String)&amp#27;[0m
+]]></system-out>
+    <system-err><![CDATA[jun 20, 2023 12:36:05 PM org.openqa.selenium.remote.service.DriverService$Builder getLogOutput
+INFO: Driver logs no longer sent to console by default; https://www.selenium.dev/documentation/webdriver/drivers/service/#setting-log-output
+]]></system-err>
+  </testcase>
+  <testcase name=": E-mail e/ou senha invalidos #3" classname="Login e/ou senha invalido" time="6.386">
+    <system-out><![CDATA[
+@web @login @invalido
+Scenario Outline: : E-mail e/ou senha invalidos &amp#27;[90m# src/test/java/features/LoginInvalidoRC.feature:17&amp#27;[0m
+  &amp#27;[32mGiven &amp#27;[0m&amp#27;[32mestar na tela de login RC&amp#27;[0m               &amp#27;[90m# logins.LoginInvalidoRC.estar_na_tela_de_login_rc()&amp#27;[0m
+  &amp#27;[32mWhen &amp#27;[0m&amp#27;[32minserir e-mail &amp#27;[0m&amp#27;[32m&amp#27;[1m"teste@gmail.com"&amp#27;[0m         &amp#27;[90m# logins.LoginInvalidoRC.inserir_e_mail(java.lang.String)&amp#27;[0m
+  &amp#27;[32mAnd &amp#27;[0m&amp#27;[32minserir senha &amp#27;[0m&amp#27;[32m&amp#27;[1m"123456"&amp#27;[0m                    &amp#27;[90m# logins.LoginInvalidoRC.inserir_senha(java.lang.String)&amp#27;[0m
+  &amp#27;[32mAnd &amp#27;[0m&amp#27;[32mclique em â€œEntrarâ€�&amp#27;[0m                        &amp#27;[90m# logins.LoginInvalidoRC.clique_em_entrar()&amp#27;[0m
+  &amp#27;[32mThen &amp#27;[0m&amp#27;[32mapresenta &amp#27;[0m&amp#27;[32m&amp#27;[1m"Login e/ou senha invÃ¡lido(s)"&amp#27;[0m &amp#27;[90m# logins.LoginInvalidoRC.apresenta(java.lang.String)&amp#27;[0m
+]]></system-out>
+    <system-err><![CDATA[jun 20, 2023 12:36:14 PM org.openqa.selenium.remote.service.DriverService$Builder getLogOutput
+INFO: Driver logs no longer sent to console by default; https://www.selenium.dev/documentation/webdriver/drivers/service/#setting-log-output
+]]></system-err>
+  </testcase>
+  <testcase name="E-mail e senha válidos" classname="Login" time="8.098">
+    <system-out><![CDATA[
+@web @login @valido
+Scenario Outline: E-mail e senha vÃ¡lidos        &amp#27;[90m# src/test/java/features/LoginRC.feature:15&amp#27;[0m
+  &amp#27;[32mGiven &amp#27;[0m&amp#27;[32mestar na tela de login&amp#27;[0m                  &amp#27;[90m# logins.LoginRC.estar_na_tela_de_login()&amp#27;[0m
+  &amp#27;[32mWhen &amp#27;[0m&amp#27;[32minserir o e-mail &amp#27;[0m&amp#27;[32m&amp#27;[1m"lucasycosta@gmail.com"&amp#27;[0m &amp#27;[90m# logins.LoginRC.inserir_o_e_mail(java.lang.String)&amp#27;[0m
+  &amp#27;[32mAnd &amp#27;[0m&amp#27;[32minserir a senha &amp#27;[0m&amp#27;[32m&amp#27;[1m"123456"&amp#27;[0m                  &amp#27;[90m# logins.LoginRC.inserir_a_senha(java.lang.String)&amp#27;[0m
+  &amp#27;[32mAnd &amp#27;[0m&amp#27;[32mclicar no botÃ£o â€œEntrarâ€�&amp#27;[0m                  &amp#27;[90m# logins.LoginRC.clicar_no_botÃ£o_entrar()&amp#27;[0m
+  &amp#27;[32mThen &amp#27;[0m&amp#27;[32mabrira a pÃ¡gina inicial&amp#27;[0m                  &amp#27;[90m# logins.LoginRC.abrira_a_pÃ¡gina_inicial()&amp#27;[0m
+]]></system-out>
+    <system-err><![CDATA[jun 20, 2023 12:36:20 PM org.openqa.selenium.remote.service.DriverService$Builder getLogOutput
+INFO: Driver logs no longer sent to console by default; https://www.selenium.dev/documentation/webdriver/drivers/service/#setting-log-output
+]]></system-err>
+  </testcase>
+  <testcase name=": E-mail e/ou senha vazios ou invalidos #1" classname="Login invalido" time="4.993">
+    <system-out><![CDATA[
+@web @login @vazio
+Scenario Outline: : E-mail e/ou senha vazios ou invalidos &amp#27;[90m# src/test/java/features/LoginVazioRC.feature:15&amp#27;[0m
+  &amp#27;[32mGiven &amp#27;[0m&amp#27;[32mestar na tela de login do RC&amp#27;[0m                      &amp#27;[90m# logins.LoginVazioRC.estar_na_tela_de_login_do_rc()&amp#27;[0m
+  &amp#27;[32mWhen &amp#27;[0m&amp#27;[32minserir um e-mail &amp#27;[0m&amp#27;[32m&amp#27;[1m""&amp#27;[0m                               &amp#27;[90m# logins.LoginVazioRC.inserir_um_e_mail(java.lang.String)&amp#27;[0m
+  &amp#27;[32mAnd &amp#27;[0m&amp#27;[32minserir uma senha &amp#27;[0m&amp#27;[32m&amp#27;[1m"123456"&amp#27;[0m                          &amp#27;[90m# logins.LoginVazioRC.inserir_uma_senha(java.lang.String)&amp#27;[0m
+  &amp#27;[32mThen &amp#27;[0m&amp#27;[32mapresenta a mensagem &amp#27;[0m&amp#27;[32m&amp#27;[1m"O campo Email Ã© obrigatÃ³rio"&amp#27;[0m &amp#27;[90m# logins.LoginVazioRC.apresenta_a_mensagem(java.lang.String)&amp#27;[0m
+]]></system-out>
+    <system-err><![CDATA[jun 20, 2023 12:36:28 PM org.openqa.selenium.remote.service.DriverService$Builder getLogOutput
+INFO: Driver logs no longer sent to console by default; https://www.selenium.dev/documentation/webdriver/drivers/service/#setting-log-output
+]]></system-err>
+  </testcase>
+  <testcase name=": E-mail e/ou senha vazios ou invalidos #2" classname="Login invalido" time="6.461">
+    <system-out><![CDATA[
+@web @login @vazio
+Scenario Outline: : E-mail e/ou senha vazios ou invalidos &amp#27;[90m# src/test/java/features/LoginVazioRC.feature:16&amp#27;[0m
+  &amp#27;[32mGiven &amp#27;[0m&amp#27;[32mestar na tela de login do RC&amp#27;[0m                      &amp#27;[90m# logins.LoginVazioRC.estar_na_tela_de_login_do_rc()&amp#27;[0m
+  &amp#27;[32mWhen &amp#27;[0m&amp#27;[32minserir um e-mail &amp#27;[0m&amp#27;[32m&amp#27;[1m"raonikg@gmail.com"&amp#27;[0m              &amp#27;[90m# logins.LoginVazioRC.inserir_um_e_mail(java.lang.String)&amp#27;[0m
+  &amp#27;[32mAnd &amp#27;[0m&amp#27;[32minserir uma senha &amp#27;[0m&amp#27;[32m&amp#27;[1m""&amp#27;[0m                                &amp#27;[90m# logins.LoginVazioRC.inserir_uma_senha(java.lang.String)&amp#27;[0m
+  &amp#27;[32mThen &amp#27;[0m&amp#27;[32mapresenta a mensagem &amp#27;[0m&amp#27;[32m&amp#27;[1m"O campo Senha Ã© obrigatÃ³rio"&amp#27;[0m &amp#27;[90m# logins.LoginVazioRC.apresenta_a_mensagem(java.lang.String)&amp#27;[0m
+]]></system-out>
+    <system-err><![CDATA[jun 20, 2023 12:36:33 PM org.openqa.selenium.remote.service.DriverService$Builder getLogOutput
+INFO: Driver logs no longer sent to console by default; https://www.selenium.dev/documentation/webdriver/drivers/service/#setting-log-output
+]]></system-err>
+  </testcase>
+  <testcase name=": E-mail e/ou senha vazios ou invalidos #3" classname="Login invalido" time="6.127">
+    <system-out><![CDATA[
+@web @login @vazio
+Scenario Outline: : E-mail e/ou senha vazios ou invalidos            &amp#27;[90m# src/test/java/features/LoginVazioRC.feature:17&amp#27;[0m
+  &amp#27;[32mGiven &amp#27;[0m&amp#27;[32mestar na tela de login do RC&amp#27;[0m                                 &amp#27;[90m# logins.LoginVazioRC.estar_na_tela_de_login_do_rc()&amp#27;[0m
+  &amp#27;[32mWhen &amp#27;[0m&amp#27;[32minserir um e-mail &amp#27;[0m&amp#27;[32m&amp#27;[1m"teste.com"&amp#27;[0m                                 &amp#27;[90m# logins.LoginVazioRC.inserir_um_e_mail(java.lang.String)&amp#27;[0m
+  &amp#27;[32mAnd &amp#27;[0m&amp#27;[32minserir uma senha &amp#27;[0m&amp#27;[32m&amp#27;[1m"123456"&amp#27;[0m                                     &amp#27;[90m# logins.LoginVazioRC.inserir_uma_senha(java.lang.String)&amp#27;[0m
+  &amp#27;[32mThen &amp#27;[0m&amp#27;[32mapresenta a mensagem &amp#27;[0m&amp#27;[32m&amp#27;[1m"O campo Email deve ser um email vÃ¡lido"&amp#27;[0m &amp#27;[90m# logins.LoginVazioRC.apresenta_a_mensagem(java.lang.String)&amp#27;[0m
+]]></system-out>
+    <system-err><![CDATA[jun 20, 2023 12:36:39 PM org.openqa.selenium.remote.service.DriverService$Builder getLogOutput
+INFO: Driver logs no longer sent to console by default; https://www.selenium.dev/documentation/webdriver/drivers/service/#setting-log-output
+]]></system-err>
+  </testcase>
+</testsuite>

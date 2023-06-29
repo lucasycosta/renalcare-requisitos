@@ -1,0 +1,7 @@
+-------------------------------------------------------------------------------
+Test set: RunnerAll
+-------------------------------------------------------------------------------
+Tests run: 10, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 59.139 s <<< FAILURE! - in RunnerAll
+Esqueci Senha vazio.Campo email vazio  Time elapsed: 3.253 s  <<< FAILURE!
+org.junit.ComparisonFailure: expected:<...1.232.138:3000/auth/[forgot]> but was:<...1.232.138:3000/auth/[login]>
+
