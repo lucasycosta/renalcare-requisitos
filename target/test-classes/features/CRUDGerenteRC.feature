@@ -18,11 +18,11 @@ Feature: Cadastrar Gerente
     Then retorna a mensagem "<mensagem>" para gerente
 
     Examples: 
-      | nome     | email        | sexo      | cpf         | telefone    | data     | mensagem                |
-      | Gerente1 | tst@mail.com | Masculino | 11111111111 | 11111111111 | 01012000 | Cadastrado com sucesso! |
-      | Gerente2 | tst@mail.com | Feminino  | 22222222222 | 22222222222 | 01012000 | Cadastrado com sucesso! |
-      | Gerente3 | tst@mail.com | Masculino | 11111111111 | 11111111111 | 01012000 | Cadastrado com sucesso! |
-      | Gerente4 | tst@mail.com | Feminino  | 11111111111 | 11111111111 | 01012000 | Cadastrado com sucesso! |
+      | nome     | email         | sexo      | cpf         | telefone    | data     | mensagem                |
+      | Gerente1 | tst1@mail.com | Masculino | 11111111111 | 11111111111 | 01012000 | Cadastrado com sucesso! |
+      | Gerente2 | tst2@mail.com | Feminino  | 22222222222 | 22222222222 | 01012000 | Cadastrado com sucesso! |
+      | Gerente3 | tst3@mail.com | Masculino | 33333333333 | 33333333333 | 01012000 | Cadastrado com sucesso! |
+      | Gerente4 | tst4@mail.com | Feminino  | 44444444444 | 44444444444 | 01012000 | Cadastrado com sucesso! |
 
   @web @gerente @registrarGerErro
   Scenario Outline: Registrar Gerente com campos em branco
@@ -53,9 +53,8 @@ Feature: Cadastrar Gerente
     Then o retorna o telefone gerente "<telefone>"
 
     Examples: 
-      | nome        | email                 | cpf            | telefone        |
-      | Test Get    | teste@gerente.com     | 132.132.132-21 | (61) 99888-8887 |
-      | Lucas Teste | lucasycosta@gmail.com | 123.456.789-99 | (61) 99999-9999 |
+      | nome     | email         | cpf            | telefone        |
+      | Gerente1 | tst1@mail.com | 111.111.111-11 | (11) 11111-1111 |
 
   @web @gerente @alterarGer
   Scenario Outline: Alterar Gerente cadastrado
@@ -69,9 +68,11 @@ Feature: Cadastrar Gerente
     Then mensagem de alteracao "<mensagem>"
 
     Examples: 
-      | nome        | nome2 | mensagem              |
-      | Lucas Teste | Lucas | Alterado com sucesso! |
-      | Test Get    | Teste | Alterado com sucesso! |
+      | nome     | nome2     | mensagem              |
+      | Gerente1 | Gerentee1 | Alterado com sucesso! |
+      | Gerente2 | Gerentee2 | Alterado com sucesso! |
+      | Gerente3 | Gerentee3 | Alterado com sucesso! |
+      | Gerente4 | Gerentee4 | Alterado com sucesso! |
 
   @web @gerente @excluirGer
   Scenario Outline: Desabilitar Gerente cadastrado
@@ -79,13 +80,17 @@ Feature: Cadastrar Gerente
     When insera "<nome>" no campo de busca de gerente
     When o registro do gerente do "<nome>" retornar
     When clicar no icone de exclusão do gerente
-    #Then mensagem "<mensagem>" de desabilitar gerente
+    When clicar em SIM para desabilitar gerente
+    Then mensagem "<mensagem>" de desabilitar gerente
 
     Examples: 
-      | nome  | mensagem                  |
-      | Teste | Desabilitado com sucesso! |
-      
-@web @Gerico @emailGerInvalido
+      | nome      | mensagem                  |
+      | Gerentee1 | Desabilitado com sucesso! |
+      | Gerentee2 | Desabilitado com sucesso! |
+      | Gerentee3 | Desabilitado com sucesso! |
+      | Gerentee4 | Desabilitado com sucesso! |
+
+  @web @Gerico @emailGerInvalido
   Scenario Outline: Email invalido gerente
     And preencher o campo email invalido do gerente "<email>"
     Then mensagem "<mensagem>" de email invalido gerente
@@ -97,4 +102,3 @@ Feature: Cadastrar Gerente
       | aaaaaa@.com | O campo Email deve ser um email válido |
       | aaaaaa@mail | O campo Email deve ser um email válido |
       | aaaaaa.com  | O campo Email deve ser um email válido |
-

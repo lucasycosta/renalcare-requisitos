@@ -9,7 +9,7 @@ import io.cucumber.junit.CucumberOptions;
 @CucumberOptions(plugin = "pretty",
 				 features = "src/test/java/features/CRUDNoticiaRC.feature", 
 				 glue = "Noticia",
-				 tags = "@excluirNot")
+				 tags = "@noticia")
 public class RunnerNoticia {
 
 }

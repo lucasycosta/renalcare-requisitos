@@ -10,6 +10,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import io.cucumber.java.After;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -55,13 +56,6 @@ public class LoginRC {
 	public void abrira_a_inicial(String string) {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(3));
 		wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//span[contains(text(), 'Cadastrar')]")));
-		
-		/*
-		 * WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(3));
-		 * wait.until(ExpectedConditions.urlToBe(string)); String urlAtual =
-		 * driver.getCurrentUrl(); System.out.println(urlAtual);
-		 * Assert.assertEquals(string, urlAtual);
-		 */
 	}
 
 	// LOGIN INVALIDO
@@ -123,5 +117,10 @@ public class LoginRC {
 		 * Assert.assertEquals("O campo Email deve ser um email válido", invalidoTexto);
 		 * }
 		 */
+	}
+	
+	@After
+	public void fecharLoginRC() {
+		driver.quit();
 	}
 }

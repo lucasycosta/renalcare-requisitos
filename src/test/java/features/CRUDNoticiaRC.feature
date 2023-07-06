@@ -45,10 +45,10 @@ Feature: Cadastrar noticia
 
     Examples: 
       | titulo   | dataCad    | datapubli  |
-      | noticia1 | 26/06/2023 | 06/06/2023 |
-      | noticia2 | 26/06/2023 | 07/09/2022 |
-      | noticia3 | 26/06/2023 | 25/11/2023 |
-      | noticia4 | 26/06/2023 | 01/01/2000 |
+      | noticia1 | 06/07/2023 | 06/06/2023 |
+      | noticia2 | 06/07/2023 | 07/09/2022 |
+      | noticia3 | 06/07/2023 | 25/11/2023 |
+      | noticia4 | 06/07/2023 | 01/01/2000 |
 
   @web @noticia @alterarNot
   Scenario Outline: Alterar noticia cadastrada
@@ -74,8 +74,8 @@ Feature: Cadastrar noticia
     When insera "<titulo>" no campo de busca de noticia
     When o registro do noticia do "<titulo>" retornar
     When clicar no icone de exclusão do noticia
-
-    #Then mensagem "<mensagem>" de deletado noticia
+    When clicar em SIM para deletar noticia
+    Then mensagem "<mensagem>" de deletado noticia
     Examples: 
       | titulo   | mensagem              |
       | Noticia1 | Deletado com sucesso! |

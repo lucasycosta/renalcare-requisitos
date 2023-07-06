@@ -11,6 +11,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import io.cucumber.java.After;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -18,7 +19,7 @@ import io.cucumber.java.en.When;
 public class CadastrarGerenteRC {
 	private WebDriver driver;
 	private String url = "http://44.201.232.138:3000/auth/login";
-	
+
 	private WebElement cadastrar;
 	private WebElement gerente;
 	private WebElement mensagem;
@@ -36,8 +37,9 @@ public class CadastrarGerenteRC {
 	private WebElement botaoAlterar;
 	private WebElement buscar;
 	private WebElement nomeCampo;
-	
-	//BACKGROUND
+	private WebElement botaoDesabilitar;
+
+	// BACKGROUND
 	@Given("login Gerente")
 	public void login_gerente() {
 		driver = new ChromeDriver();
@@ -45,7 +47,7 @@ public class CadastrarGerenteRC {
 
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(3));
 		email = wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("input[name='email']")));
-		email.sendKeys("lucasycosta@gmail.com");
+		email.sendKeys("costaylucas@gmail.com");
 		driver.findElement(By.cssSelector("input[name='password']")).sendKeys("123456");
 		driver.findElement(By.cssSelector("button[type='submit']")).click();
 	}
@@ -53,12 +55,13 @@ public class CadastrarGerenteRC {
 	@Given("clicar em Cadastrar no menu a esquerda")
 	public void clicar_em_cadastrar_no_menu_a_esquerda() {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(3));
-		cadastrar = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//span[contains(text(), 'Cadastrar')]")));
+		cadastrar = wait
+				.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//span[contains(text(), 'Cadastrar')]")));
 		cadastrar.click();
 	}
 
 	@Given("clicar em Gerente dentro de Cadastrar")
-	public void clicar_em_gerente_dentro_de_cadastrar() throws InterruptedException{
+	public void clicar_em_gerente_dentro_de_cadastrar() throws InterruptedException {
 		Thread.sleep(1000);
 		gerente = driver.findElement(By.cssSelector("a[href='/user/new?profile=manager']"));
 		gerente.click();
@@ -72,7 +75,7 @@ public class CadastrarGerenteRC {
 		Assert.assertEquals("http://44.201.232.138:3000/user/new?profile=manager", urlAtual);
 	}
 
-	//REGISTRAR GERENTE COM SUCESSO
+	// REGISTRAR GERENTE COM SUCESSO
 	@When("preencher campo com nome {string}")
 	public void preencher_campo_com_nome(String string) {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(3));
@@ -121,14 +124,21 @@ public class CadastrarGerenteRC {
 	}
 
 	@Then("retorna a mensagem {string} para gerente")
-	public void retorna_a_mensagem_para_gerente(String string) {
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(3));
-		mensagem = wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("p[class='flex rounded-md border px-4 py-3 text-left border-green-800 bg-green-100 text-green-800'")));
+	public void retorna_a_mensagem_para_gerente(String string) throws InterruptedException {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2));
+
+		int qtdScrolls = 10;
+		for (int i = 0; i < qtdScrolls; i++) {
+			driver.findElement(By.tagName("body")).sendKeys(Keys.UP);
+		}
+
+		Thread.sleep(2000);
+		mensagem = wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("p[data-v-bf21962e]")));
 		String texto = mensagem.getText();
 		Assert.assertEquals(string, texto);
 	}
-	
-	//REGISTRAR GERENTE COM CAMPO VAZIO
+
+	// REGISTRAR GERENTE COM CAMPO VAZIO
 	@When("preencher nome {string} do gerente")
 	public void preencher_nome_do_gerente(String string) {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(3));
@@ -174,7 +184,7 @@ public class CadastrarGerenteRC {
 
 	@Then("retorna a mensagem {string} na tela de gerente")
 	public void retorna_a_mensagem_na_tela_de_gerente(String string) {
-	
+
 		if (nome.getAttribute("data-maska-value") == null) {
 			String errorMessageNome = nome.getAttribute("errormessage");
 			Assert.assertEquals(string, errorMessageNome);
@@ -196,8 +206,7 @@ public class CadastrarGerenteRC {
 		}
 	}
 
-	
-	//CONSULTAR GERENTE
+	// CONSULTAR GERENTE
 	@When("rolar pagina")
 	public void rolar_pagina() {
 		int qtdScrolls = 10;
@@ -213,7 +222,9 @@ public class CadastrarGerenteRC {
 		buscar.click();
 		buscar.sendKeys(string);
 
-		driver.findElement(By.cssSelector("button[class='absolute right-0 px-3 py-2 text-neutral-400 hover:text-neutral-600']")).click();
+		driver.findElement(
+				By.cssSelector("button[class='absolute right-0 px-3 py-2 text-neutral-400 hover:text-neutral-600']"))
+				.click();
 	}
 
 	@Then("o retorna o nome do gerente {string}")
@@ -245,8 +256,7 @@ public class CadastrarGerenteRC {
 		Assert.assertEquals(string, telCampo);
 	}
 
-	
-	//ALTERAR GERENTE
+	// ALTERAR GERENTE
 	@When("role pagina de gerente")
 	public void role_pagina_de_gerente() {
 		int qtdScrolls = 10;
@@ -254,7 +264,7 @@ public class CadastrarGerenteRC {
 			driver.findElement(By.tagName("body")).sendKeys(Keys.DOWN);
 		}
 	}
-	
+
 	@When("inserir {string} para buscar Gerente")
 	public void inserir_para_buscar_gerente(String string) {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(3));
@@ -262,11 +272,13 @@ public class CadastrarGerenteRC {
 		buscar.click();
 		buscar.sendKeys(string);
 
-		driver.findElement(By.cssSelector("button[class='absolute right-0 px-3 py-2 text-neutral-400 hover:text-neutral-600']")).click();
+		driver.findElement(
+				By.cssSelector("button[class='absolute right-0 px-3 py-2 text-neutral-400 hover:text-neutral-600']"))
+				.click();
 	}
 
 	@When("o registro do gerente com {string} retornar")
-	public void o_registro_do_gerente_com_retornar(String string)  throws InterruptedException {
+	public void o_registro_do_gerente_com_retornar(String string) throws InterruptedException {
 		Thread.sleep(2000);
 		WebElement nomeCampo = driver.findElement(By.cssSelector("td[data-col='0'] span"));
 		String retorno = nomeCampo.getText();
@@ -279,7 +291,7 @@ public class CadastrarGerenteRC {
 	}
 
 	@When("os dados do gerente serao apresentados")
-	public void os_dados_do_gerente_serao_apresentados(){
+	public void os_dados_do_gerente_serao_apresentados() {
 		int qtdScrolls = 10;
 		for (int i = 0; i < qtdScrolls; i++) {
 			driver.findElement(By.tagName("body")).sendKeys(Keys.UP);
@@ -309,7 +321,7 @@ public class CadastrarGerenteRC {
 		Assert.assertEquals(string, texto);
 	}
 
-	//DEASBILITAR GERENTE
+	// DEASBILITAR GERENTE
 	@When("role pagina para baixo")
 	public void role_pagina_para_baixo() {
 		int qtdScrolls = 10;
@@ -325,11 +337,13 @@ public class CadastrarGerenteRC {
 		buscar.click();
 		buscar.sendKeys(string);
 
-		driver.findElement(By.cssSelector("button[class='absolute right-0 px-3 py-2 text-neutral-400 hover:text-neutral-600']")).click();
+		driver.findElement(
+				By.cssSelector("button[class='absolute right-0 px-3 py-2 text-neutral-400 hover:text-neutral-600']"))
+				.click();
 	}
-	
+
 	@When("o registro do gerente do {string} retornar")
-	public void o_registro_do_gerente_do_retornar(String string) throws InterruptedException{
+	public void o_registro_do_gerente_do_retornar(String string) throws InterruptedException {
 		Thread.sleep(2000);
 		nomeCampo = driver.findElement(By.cssSelector("td[data-col='0'] span"));
 		String retorno = nomeCampo.getText();
@@ -341,26 +355,40 @@ public class CadastrarGerenteRC {
 		driver.findElement(By.cssSelector("div[data-tip='Deletar']")).click();
 	}
 
-	/*
-	 * @Then("mensagem {string} de desabilitar gerente") public void
-	 * mensagem_de_desabilitar_gerente(String string) { // Write code here that
-	 * turns the phrase above into concrete actions throw new
-	 * io.cucumber.java.PendingException(); }
-	 */
-	
-	//EMAIL INVALIDO
-		@When("preencher o campo email invalido do gerente {string}")
-		public void preencher_o_campo_email_invalido_do_gerente(String string) {
-			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(3));
-			email = wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("input[name='email']")));
-			email.sendKeys(string);
-			
-			driver.findElement(By.cssSelector("input[name='name']")).click();
-		}
+	@When("clicar em SIM para desabilitar gerente")
+	public void clicar_em_sim_para_desabilitar_gerente() throws InterruptedException {
+		Thread.sleep(2000);
+		WebElement caixa = driver.findElement(By.cssSelector("div[name='content']"));
+		botaoDesabilitar = caixa.findElement(By.xpath("//button[contains(text(), 'Sim')]"));
+		botaoDesabilitar.click();
+	}
 
-		@Then("mensagem {string} de email invalido gerente")
-		public void mensagem_de_email_invalido_gerente(String string) {
-			String errorMessageEmail = email.getAttribute("errormessage");
-			Assert.assertEquals(string, errorMessageEmail);
-		}
+	@Then("mensagem {string} de desabilitar gerente")
+	public void mensagem_de_desabilitar_gerente(String string) {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(1));
+		mensagem = wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("p.text-green-800")));
+		String texto = mensagem.getText();
+		Assert.assertEquals(string, texto);
+	}
+
+	// EMAIL INVALIDO
+	@When("preencher o campo email invalido do gerente {string}")
+	public void preencher_o_campo_email_invalido_do_gerente(String string) {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(3));
+		email = wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("input[name='email']")));
+		email.sendKeys(string);
+
+		driver.findElement(By.cssSelector("input[name='name']")).click();
+	}
+
+	@Then("mensagem {string} de email invalido gerente")
+	public void mensagem_de_email_invalido_gerente(String string) {
+		String errorMessageEmail = email.getAttribute("errormessage");
+		Assert.assertEquals(string, errorMessageEmail);
+	}
+	
+	@After
+	public void fecharGerenteRC() {
+		driver.quit();
+	}
 }

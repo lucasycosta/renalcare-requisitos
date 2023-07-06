@@ -86,7 +86,8 @@ Feature: Cadastrar medico
     When insera "<nome>" no campo de busca de medico
     When o registro do medico do "<nome>" retornar
     When clicar no icone de exclusão do medico
-    #Then mensagem "<mensagem>" de desabilitar medico
+    When clicar em SIM para desabilitar medico
+    Then mensagem "<mensagem>" de desabilitar medico
     Examples: 
       | nome    | mensagem                  |
       | Medico1 | Desabilitado com sucesso! |

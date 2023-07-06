@@ -11,6 +11,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import io.cucumber.java.After;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -33,8 +34,9 @@ public class NoticiaRC {
 	private WebElement tituloNovo;
 	private WebElement botaoAlterar;
 	private WebElement buscar;
-	
-	//BACKGROUND
+	private WebElement botaoDesabilitar;
+
+	// BACKGROUND
 	@Given("login noticia")
 	public void login_noticia() {
 		driver = new ChromeDriver();
@@ -42,7 +44,7 @@ public class NoticiaRC {
 
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(3));
 		email = wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("input[name='email']")));
-		email.sendKeys("lucasycosta@gmail.com");
+		email.sendKeys("costaylucas@gmail.com");
 		driver.findElement(By.cssSelector("input[name='password']")).sendKeys("123456");
 		driver.findElement(By.cssSelector("button[type='submit']")).click();
 	}
@@ -62,8 +64,7 @@ public class NoticiaRC {
 		Assert.assertEquals("http://44.201.232.138:3000/news", urlAtual);
 	}
 
-	
-	//CADASTRAR COM SUCESSO
+	// CADASTRAR COM SUCESSO
 	@When("preencher campo com titulo {string}")
 	public void preencher_campo_com_titulo(String string) {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(3));
@@ -74,7 +75,8 @@ public class NoticiaRC {
 	@When("preencher campo com data da publicacao {string}")
 	public void preencher_campo_com_data_da_publicacao(String string) {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2));
-		dataPubli = wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("input[name='publishDate']")));
+		dataPubli = wait
+				.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("input[name='publishDate']")));
 		dataPubli.sendKeys(string);
 	}
 
@@ -93,21 +95,27 @@ public class NoticiaRC {
 	}
 
 	@When("clicar no botao Cadastrar noticia")
-	public void clicar_no_botao_cadastrar_noticia() throws InterruptedException{
+	public void clicar_no_botao_cadastrar_noticia() throws InterruptedException {
 		Thread.sleep(1000);
 		driver.findElement(By.cssSelector("button[type='submit']")).click();
 	}
 
 	@Then("retorna a mensagem {string} para noticia")
-	public void retorna_a_mensagem_para_noticia(String string) {
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(3));
-		mensagem = wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("p[class='flex rounded-md border px-4 py-3 text-left border-green-800 bg-green-100 text-green-800'")));
+	public void retorna_a_mensagem_para_noticia(String string) throws InterruptedException {
+
+		int qtdScrolls = 10;
+		for (int i = 0; i < qtdScrolls; i++) {
+			driver.findElement(By.tagName("body")).sendKeys(Keys.UP);
+		}
+
+		Thread.sleep(3000);
+		mensagem = driver.findElement(By.cssSelector(
+				"p[class='flex items-center justify-between rounded-md border px-4 py-3 text-left border-green-800 bg-green-100 text-green-800']"));
 		String texto = mensagem.getText();
-		Assert.assertEquals(string, texto);	
+		Assert.assertEquals(string, texto);
 	}
 
-	
-	//REGISTRAR NOTICIA COM CAMPOS VAZIOS
+	// REGISTRAR NOTICIA COM CAMPOS VAZIOS
 	@When("preencher tiulo {string} da noticia")
 	public void preencher_tiulo_da_noticia(String string) {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(1));
@@ -118,7 +126,8 @@ public class NoticiaRC {
 	@When("preencher data da publicacao {string} da noticia")
 	public void preencher_data_da_publicacao_da_noticia(String string) {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2));
-		dataPubli = wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("input[name='publishDate']")));
+		dataPubli = wait
+				.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("input[name='publishDate']")));
 		dataPubli.sendKeys(string);
 	}
 
@@ -147,10 +156,10 @@ public class NoticiaRC {
 		} else if (texto.getAttribute("textarea") == null) {
 			String errorMessageTexto = texto.getAttribute("errormessage");
 			Assert.assertEquals(string, errorMessageTexto);
-		} 
+		}
 	}
 
-	//CONSULTAR NOTICIA
+	// CONSULTAR NOTICIA
 	@When("rolar pagina de noticia")
 	public void rolar_pagina_de_noticia() {
 		int qtdScrolls = 10;
@@ -166,11 +175,13 @@ public class NoticiaRC {
 		buscar.click();
 		buscar.sendKeys(string);
 
-		driver.findElement(By.cssSelector("button[class='absolute right-0 px-3 py-2 text-neutral-400 hover:text-neutral-600']")).click();
+		driver.findElement(
+				By.cssSelector("button[class='absolute right-0 px-3 py-2 text-neutral-400 hover:text-neutral-600']"))
+				.click();
 	}
 
 	@Then("o retorna o titulo da noticia {string}")
-	public void o_retorna_o_titulo_da_noticia(String string) throws InterruptedException{
+	public void o_retorna_o_titulo_da_noticia(String string) throws InterruptedException {
 		Thread.sleep(2000);
 		tituloRetorno = driver.findElement(By.cssSelector("td[data-col='0']"));
 		String tituloCampo = tituloRetorno.findElement(By.cssSelector("span")).getText();
@@ -191,7 +202,7 @@ public class NoticiaRC {
 		Assert.assertEquals(string, dataPublCampo);
 	}
 
-	//ALTERAR NOTICIA
+	// ALTERAR NOTICIA
 	@When("role pagina de noticia")
 	public void role_pagina_de_noticia() {
 		int qtdScrolls = 10;
@@ -208,12 +219,12 @@ public class NoticiaRC {
 		buscar.sendKeys(string);
 
 		driver.findElement(
-			   By.cssSelector("button[class='absolute right-0 px-3 py-2 text-neutral-400 hover:text-neutral-600']"))
-			  .click();
+				By.cssSelector("button[class='absolute right-0 px-3 py-2 text-neutral-400 hover:text-neutral-600']"))
+				.click();
 	}
 
 	@When("o registro do noticia com {string} retorna")
-	public void o_registro_do_noticia_com_retorna(String string) throws InterruptedException{
+	public void o_registro_do_noticia_com_retorna(String string) throws InterruptedException {
 		Thread.sleep(2000);
 		tituloCampo = driver.findElement(By.cssSelector("td[data-col='0'] span"));
 		String retorno = tituloCampo.getText();
@@ -255,8 +266,8 @@ public class NoticiaRC {
 		String texto = mensagem.getText();
 		Assert.assertEquals(string, texto);
 	}
-	
-	//DELETAR NOTICIA
+
+	// DELETAR NOTICIA
 	@When("role pagina de noticia para baixo")
 	public void role_pagina_de_noticia_para_baixo() {
 		int qtdScrolls = 10;
@@ -278,7 +289,7 @@ public class NoticiaRC {
 	}
 
 	@When("o registro do noticia do {string} retornar")
-	public void o_registro_do_noticia_do_retornar(String string) throws InterruptedException{
+	public void o_registro_do_noticia_do_retornar(String string) throws InterruptedException {
 		Thread.sleep(2000);
 		tituloCampo = driver.findElement(By.cssSelector("td[data-col='0'] span"));
 		String retorno = tituloCampo.getText();
@@ -288,5 +299,26 @@ public class NoticiaRC {
 	@When("clicar no icone de exclusão do noticia")
 	public void clicar_no_icone_de_exclusão_do_noticia() {
 		driver.findElement(By.cssSelector("div[data-tip='Deletar']")).click();
+	}
+
+	@When("clicar em SIM para deletar noticia")
+	public void clicar_em_sim_para_deletar_noticia() throws InterruptedException {
+		Thread.sleep(2000);
+		WebElement caixa = driver.findElement(By.cssSelector("div[name='content']"));
+		botaoDesabilitar = caixa.findElement(By.xpath("//button[contains(text(), 'Sim')]"));
+		botaoDesabilitar.click();
+	}
+
+	@Then("mensagem {string} de deletado noticia")
+	public void mensagem_de_deletado_noticia(String string) {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(1));
+		mensagem = wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("p.text-green-800")));
+		String texto = mensagem.getText();
+		Assert.assertEquals(string, texto);
+	}
+
+	@After
+	public void fecharNoticiaRC() {
+		driver.quit();
 	}
 }

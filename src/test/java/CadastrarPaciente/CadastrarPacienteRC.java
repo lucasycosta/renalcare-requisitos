@@ -11,6 +11,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import io.cucumber.java.After;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -37,6 +38,7 @@ public class CadastrarPacienteRC {
 	private WebElement nomeNovo;
 	private WebElement botaoAlterar;
 	private WebElement nomeCampo;
+	private WebElement botaoDesabilitar;
 
 	// BACKGROUND LOGIN
 	@Given("login")
@@ -46,14 +48,14 @@ public class CadastrarPacienteRC {
 
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(3));
 		email = wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("input[name='email']")));
-		email.sendKeys("lucasycosta@gmail.com");
+		email.sendKeys("costaylucas@gmail.com");
 		driver.findElement(By.cssSelector("input[name='password']")).sendKeys("123456");
 		driver.findElement(By.cssSelector("button[type='submit']")).click();
 	}
 
 	@Given("clicar em Cadastrar no menu lateral")
 	public void clicar_em_cadastrar_no_menu_lateral() {
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(3));
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
 		cadastrar = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//span[contains(text(), 'Cadastrar')]")));
 		cadastrar.click();
 	}
@@ -145,10 +147,16 @@ public class CadastrarPacienteRC {
 	}
 
 	@Then("retornara a mensagem {string}")
-	public void retornara_a_mensagem(String string) {
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(3));
-		mensagem = wait.until(ExpectedConditions.presenceOfElementLocated
-							 (By.cssSelector("p[class='flex rounded-md border px-4 py-3 text-left border-green-800 bg-green-100 text-green-800'")));
+	public void retornara_a_mensagem(String string) throws InterruptedException {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2));
+		
+		int qtdScrolls = 10;
+		for (int i = 0; i < qtdScrolls; i++) {
+			driver.findElement(By.tagName("body")).sendKeys(Keys.UP);
+		}
+		
+		Thread.sleep(2000);
+		mensagem = wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("p[data-v-bf21962e]")));
 		String texto = mensagem.getText();
 		Assert.assertEquals(string, texto);
 	}
@@ -383,6 +391,22 @@ public class CadastrarPacienteRC {
 		driver.findElement(By.cssSelector("div[data-tip='Deletar']")).click();
 	}
 	
+	@When("clicar em SIM para desabilitar paciente")
+	public void clicar_em_sim_para_desabilitar_paciente() throws InterruptedException {
+		Thread.sleep(2000);
+		WebElement caixa = driver.findElement(By.cssSelector("div[name='content']"));
+		botaoDesabilitar = caixa.findElement(By.xpath("//button[contains(text(), 'Sim')]"));
+		botaoDesabilitar.click();
+	}
+
+	@Then("mensagem {string} para paciente")
+	public void mensagem_para_paciente(String string) {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(1));
+		mensagem = wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("p.text-green-800")));
+		String texto = mensagem.getText();
+		Assert.assertEquals(string, texto);
+	}
+	
 	//EMAIL INVALIDO
 	@When("preencher o campo email invalido do paciente {string}")
 	public void preencher_o_campo_email_invalido_do_paciente(String string) {
@@ -397,6 +421,11 @@ public class CadastrarPacienteRC {
 	public void mensagem_de_email_invalido_paciente(String string) {
 		String errorMessageEmail = email.getAttribute("errormessage");
 		Assert.assertEquals(string, errorMessageEmail);
+	}
+	
+	@After
+	public void fecharPacienteRC() {
+		driver.quit();
 	}
 
 }

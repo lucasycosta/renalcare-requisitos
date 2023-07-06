@@ -15,7 +15,7 @@ Feature: Login
       | lucasycosta@gmail.com | 123456 | http://44.201.232.138:3000/ |
 
   @web @login @invalido
-  Scenario Outline: : E-mail e/ou senha invalidos
+  Scenario Outline: E-mail e/ou senha invalidos
     When inserir o e-mail "<email>"
     And inserir a senha "<senha>"
     And clique em Entrar
@@ -28,7 +28,7 @@ Feature: Login
       | teste@gmail.com       | 123456 | Login e/ou senha inválido(s) |
 
   @web @login @vazio
-  Scenario Outline: : E-mail e/ou senha vazios ou invalidos
+  Scenario Outline: E-mail e/ou senha vazios ou invalidos
     When inserir um e-mail "<email>"
     And inserir uma senha "<senha>"
     Then apresenta a mensagem "<mensagem>"

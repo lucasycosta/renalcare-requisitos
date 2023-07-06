@@ -47,14 +47,14 @@ Feature: Cadastrar informacao
 
     Examples: 
       | titulo        | subtitulo | data       |
-      | Dúvidas       | info1     | 23/06/2023 |
-      | Farmácia      | info2     | 23/06/2023 |
-      | Nutrição      | info3     | 23/06/2023 |
-      | Tratamento    | info4     | 23/06/2023 |
-      | Psicologia    | info5     | 23/06/2023 |
-      | Renal crônica | info6     | 23/06/2023 |
-      | Sobre rins    | info7     | 23/06/2023 |
-      | Transplante   | info8     | 23/06/2023 |
+      | Dúvidas       | info1     | 06/07/2023 |
+      | Farmácia      | info2     | 06/07/2023 |
+      | Nutrição      | info3     | 06/07/2023 |
+      | Tratamento    | info4     | 06/07/2023 |
+      | Psicologia    | info5     | 06/07/2023 |
+      | Renal crônica | info6     | 06/07/2023 |
+      | Sobre rins    | info7     | 06/07/2023 |
+      | Transplante   | info8     | 06/07/2023 |
 
   @web @informacao @alterarinformacao
   Scenario Outline: Alterar informacao cadastrado
@@ -84,15 +84,16 @@ Feature: Cadastrar informacao
     When insera "<subtitulo>" no campo de busca de informacao
     When o registro do informacao do "<subtitulo>" retornar
     When clicar no icone de exclusão do informacao
+    When clicar em SIM para deletar informacao
+    Then mensagem "<mensagem>" de desabilitar informacao
 
-    #Then mensagem "<mensagem>" de desabilitar informacao
     Examples: 
-      | subtitulo | mensagem                  |
-      | info1     | Desabilitado com sucesso! |
-      | info2     | Desabilitado com sucesso! |
-      | info3     | Desabilitado com sucesso! |
-      | info4     | Desabilitado com sucesso! |
-      | info5     | Desabilitado com sucesso! |
-      | info6     | Desabilitado com sucesso! |
-      | info7     | Desabilitado com sucesso! |
-      | info8     | Desabilitado com sucesso! |
+      | subtitulo | mensagem              |
+      | info1     | Deletado com sucesso! |
+      | info2     | Deletado com sucesso! |
+      | info3     | Deletado com sucesso! |
+      | info4     | Deletado com sucesso! |
+      | info5     | Deletado com sucesso! |
+      | info6     | Deletado com sucesso! |
+      | info7     | Deletado com sucesso! |
+      | info8     | Deletado com sucesso! |

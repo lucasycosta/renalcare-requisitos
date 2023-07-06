@@ -9,7 +9,7 @@ import io.cucumber.junit.CucumberOptions;
 @CucumberOptions(plugin = "pretty",
 				 features = "src/test/java/features/ArquivoRC.feature", 
 				 glue = "Arquivo",
-				 tags = "@equipeDesabilitada")
+				 tags = "@lista")
 public class RunnerArquivoRC {
 
 }

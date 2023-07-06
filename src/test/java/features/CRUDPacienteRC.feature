@@ -58,11 +58,11 @@ Feature: Cadastrar Paciente
     Then o retorna o telefone paciente "<telefone>"
 
     Examples: 
-      | nome      | email         | cpf         | telefone    |
-      | Paciente1 | tst1@mail.com | 11111111111 | 11111111111 |
-      | Paciente2 | tst2@mail.com | 22222222222 | 22222222222 |
-      | Paciente3 | tst3@mail.com | 33333333333 | 33333333333 |
-      | Paciente4 | tst4@mail.com | 44444444444 | 44444444444 |
+      | nome      | email         | cpf            | telefone        |
+      | Paciente1 | tst1@mail.com | 111.111.111-11 | (11) 11111-1111 |
+      | Paciente2 | tst2@mail.com | 222.222.222-22 | (22) 22222-2222 |
+      | Paciente3 | tst3@mail.com | 333.333.333-33 | (33) 33333-3333 |
+      | Paciente4 | tst4@mail.com | 444.444.444-44 | (44) 44444-4444 |
 
   @web @paciente @alterarPac
   Scenario Outline: Alterar paciente cadastrado
@@ -88,7 +88,8 @@ Feature: Cadastrar Paciente
     When insera "<nome>" no campo de busca
     When o registro do paciente do "<nome>" retornar
     When clicar no icone de exclusão
-    Then mensagem "<mensagem>"
+    When clicar em SIM para desabilitar paciente
+    Then mensagem "<mensagem>" para paciente
 
     Examples: 
       | nome       | mensagem                  |

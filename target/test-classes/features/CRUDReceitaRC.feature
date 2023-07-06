@@ -46,10 +46,10 @@ Feature: Cadastrar receita
 
     Examples: 
       | titulo   | data       |
-      | receita1 | 26/06/2023 |
-      | receita2 | 26/06/2023 |
-      | receita3 | 26/06/2023 |
-      | receita4 | 26/06/2023 |
+      | receita1 | 06/07/2023 |
+      | receita2 | 06/07/2023 |
+      | receita3 | 06/07/2023 |
+      | receita4 | 06/07/2023 |
 
   @web @receita @alterarreceita
   Scenario Outline: Alterar receita cadastrado
@@ -75,11 +75,12 @@ Feature: Cadastrar receita
     When insera "<titulo>" no campo de busca de receita
     When o registro do receita do "<titulo>" retornar
     When clicar no icone de exclusão do receita
-    #Then mensagem "<mensagem>" de desabilitar receita
+    When clicar em SIM para deletar receita
+    Then mensagem "<mensagem>" de deletar receita
 
     Examples: 
-      | titulo   | mensagem                  |
-      | Receita1 | Desabilitado com sucesso! |
-      | Receita2 | Desabilitado com sucesso! |
-      | Receita3 | Desabilitado com sucesso! |
-      | Receita4 | Desabilitado com sucesso! |
+      | titulo   | mensagem              |
+      | Receita1 | Deletado com sucesso! |
+      | Receita2 | Deletado com sucesso! |
+      | Receita3 | Deletado com sucesso! |
+      | Receita4 | Deletado com sucesso! |

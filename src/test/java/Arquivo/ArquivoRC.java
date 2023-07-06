@@ -37,7 +37,7 @@ public class ArquivoRC {
 
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(3));
 		email = wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("input[name='email']")));
-		email.sendKeys("lucasycosta@gmail.com");
+		email.sendKeys("costaylucas@gmail.com");
 		driver.findElement(By.cssSelector("input[name='password']")).sendKeys("123456");
 		driver.findElement(By.cssSelector("button[type='submit']")).click();
 	}

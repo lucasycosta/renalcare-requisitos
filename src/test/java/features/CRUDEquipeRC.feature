@@ -64,8 +64,8 @@ Feature: Cadastrar equipe
       | equipe2 | tst2@mail.com | 222.222.222-22 | (22) 22222-2222 | NUTRICIONISTA |
       | equipe3 | tst3@mail.com | 333.333.333-33 | (33) 33333-3333 | ESTOQUE       |
       | equipe4 | tst4@mail.com | 444.444.444-44 | (44) 44444-4444 | SECRETARIA    |
-      | equipe5 | tst5@mail.com | 555.555.555-55 | (44) 44444-4444 | FARMACEUTICO  |
-      | equipe6 | tst6@mail.com | 666.666.666-66 | (44) 44444-4444 | PSICOLOGO     |
+      | equipe5 | tst5@mail.com | 555.555.555-55 | (55) 55555-5555 | FARMACEUTICO  |
+      | equipe6 | tst6@mail.com | 666.666.666-66 | (66) 66666-6666 | PSICOLOGO     |
 
   @web @equipe @alterareq
   Scenario Outline: Alterar equipe cadastrado
@@ -93,7 +93,8 @@ Feature: Cadastrar equipe
     When insera "<nome>" no campo de busca de equipe
     When o registro do equipe do "<nome>" retornar
     When clicar no icone de exclusão do equipe
-    #Then mensagem "<mensagem>" de desabilitar equipe
+    When clicar em SIM para desabilitar equipe
+    Then mensagem "<mensagem>" de desabilitar equipe
     Examples: 
       | nome    | mensagem                  |
       | Equipe1 | Desabilitado com sucesso! |

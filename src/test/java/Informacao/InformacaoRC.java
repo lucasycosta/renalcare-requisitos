@@ -11,6 +11,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import io.cucumber.java.After;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -32,6 +33,7 @@ public class InformacaoRC {
 	private WebElement botaoAlterar;
 	private WebElement buscar;
 	private WebElement tituloCampo;
+	private WebElement botaoDesabilitar;
 
 	// BACKGROUND
 	@Given("login informacao")
@@ -41,7 +43,7 @@ public class InformacaoRC {
 
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(3));
 		email = wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("input[name='email']")));
-		email.sendKeys("lucasycosta@gmail.com");
+		email.sendKeys("costaylucas@gmail.com");
 		driver.findElement(By.cssSelector("input[name='password']")).sendKeys("123456");
 		driver.findElement(By.cssSelector("button[type='submit']")).click();
 	}
@@ -91,11 +93,18 @@ public class InformacaoRC {
 	}
 
 	@Then("retorna a mensagem {string} para informacao")
-	public void retorna_a_mensagem_para_informacao(String string) {
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(3));
-		mensagem = wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("p[class='flex rounded-md border px-4 py-3 text-left border-green-800 bg-green-100 text-green-800'")));
+	public void retorna_a_mensagem_para_informacao(String string) throws InterruptedException {
+
+		int qtdScrolls = 10;
+		for (int i = 0; i < qtdScrolls; i++) {
+			driver.findElement(By.tagName("body")).sendKeys(Keys.UP);
+		}
+
+		Thread.sleep(3000);
+		mensagem = driver.findElement(By.cssSelector(
+				"p[class='flex items-center justify-between rounded-md border px-4 py-3 text-left border-green-800 bg-green-100 text-green-800']"));
 		String texto = mensagem.getText();
-		Assert.assertEquals(string, texto);	
+		Assert.assertEquals(string, texto);
 	}
 
 	
@@ -124,7 +133,7 @@ public class InformacaoRC {
 
 	@Then("retorna a mensagem {string} na tela de informacao")
 	public void retorna_a_mensagem_na_tela_de_informacao(String string) {
-		if (titulo == null) {
+		if (titulo.getAttribute("data-maska-value") == null) {
 			String errorMessageTitulo = titulo.getAttribute("errormessage");
 			Assert.assertEquals(string, errorMessageTitulo);
 		} else if (subtitulo.getAttribute("data-maska-value") == null) {
@@ -275,5 +284,26 @@ public class InformacaoRC {
 	@When("clicar no icone de exclusão do informacao")
 	public void clicar_no_icone_de_exclusão_do_informacao() {
 		driver.findElement(By.cssSelector("div[data-tip='Deletar']")).click();
+	}
+	
+	@When("clicar em SIM para deletar informacao")
+	public void clicar_em_sim_para_deletar_informacao() throws InterruptedException {
+		Thread.sleep(2000);
+		WebElement caixa = driver.findElement(By.cssSelector("div[name='content']"));
+		botaoDesabilitar = caixa.findElement(By.xpath("//button[contains(text(), 'Sim')]"));
+		botaoDesabilitar.click();
+	}
+
+	@Then("mensagem {string} de desabilitar informacao")
+	public void mensagem_de_desabilitar_informacao(String string) {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(1));
+		mensagem = wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("p.text-green-800")));
+		String texto = mensagem.getText();
+		Assert.assertEquals(string, texto);
+	}
+	
+	@After
+	public void fecharInformacaoRC() {
+		driver.quit();
 	}
 }

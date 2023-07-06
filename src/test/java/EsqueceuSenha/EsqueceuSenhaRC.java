@@ -10,6 +10,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import io.cucumber.java.After;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -81,6 +82,11 @@ public class EsqueceuSenhaRC {
 		driver.findElement(By.xpath("//span[contains(text(),'E-mail')]")).click();
 		String errorMessageEmail = campoEmail.getAttribute("errormessage");
 		Assert.assertEquals(string, errorMessageEmail);
+	}
+	
+	@After
+	public void fecharEsqueciSenhaRC() {
+		driver.quit();
 	}
 	
 }

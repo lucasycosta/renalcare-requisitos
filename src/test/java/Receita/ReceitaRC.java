@@ -11,6 +11,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import io.cucumber.java.After;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -34,6 +35,7 @@ public class ReceitaRC {
 	private WebElement tituloNovo;
 	private WebElement botaoAlterar;
 	private WebElement buscar;
+	private WebElement botaoDesabilitar;
 	
 	//BACKGROUND
 	@Given("login receita")
@@ -43,7 +45,7 @@ public class ReceitaRC {
 
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(3));
 		email = wait	.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("input[name='email']")));
-		email.sendKeys("lucasycosta@gmail.com");
+		email.sendKeys("costaylucas@gmail.com");
 		driver.findElement(By.cssSelector("input[name='password']")).sendKeys("123456");
 		driver.findElement(By.cssSelector("button[type='submit']")).click();
 	}
@@ -106,14 +108,20 @@ public class ReceitaRC {
 	}
 
 	@Then("retorna a mensagem {string} para receita")
-	public void retorna_a_mensagem_para_receita(String string) {
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(3));
-		mensagem = wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("p[class='flex rounded-md border px-4 py-3 text-left border-green-800 bg-green-100 text-green-800'")));
+	public void retorna_a_mensagem_para_receita(String string) throws InterruptedException {
+		
+		int qtdScrolls = 10;
+		for (int i = 0; i < qtdScrolls; i++) {
+			driver.findElement(By.tagName("body")).sendKeys(Keys.UP);
+		}
+		
+		Thread.sleep(3000);
+		mensagem = driver.findElement(By.cssSelector("p[class='flex items-center justify-between rounded-md border px-4 py-3 text-left border-green-800 bg-green-100 text-green-800']"));
 		String texto = mensagem.getText();
 		Assert.assertEquals(string, texto);	
 	}
 
-	//REGISTRAR NOTICIA COM CAMPOS VAZIOS
+	//REGISTRAR RECEITA COM CAMPOS VAZIOS
 	@When("preencher titulo {string} do receita")
 	public void preencher_titulo_do_receita(String string) {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(1));
@@ -133,6 +141,7 @@ public class ReceitaRC {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(3));
 		ingredientes = wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("textarea[name='ingredients']")));
 		ingredientes.sendKeys(string);
+		driver.findElement(By.cssSelector("input[name='title']")).click();
 	}
 
 	@When("preencher preparo {string} receita")
@@ -140,6 +149,7 @@ public class ReceitaRC {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(3));
 		preparo = wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("textarea[name='instructions']")));
 		preparo.sendKeys(string);
+		driver.findElement(By.cssSelector("input[name='title']")).click();
 	}
 
 	@When("preencher observacao {string} do receita")
@@ -151,6 +161,7 @@ public class ReceitaRC {
 
 	@Then("retorna a mensagem {string} na tela de receita")
 	public void retorna_a_mensagem_na_tela_de_receita(String string) {
+		
 		if (titulo.getAttribute("data-maska-value") == null) {
 			String errorMessageTitulo = titulo.getAttribute("errormessage");
 			Assert.assertEquals(string, errorMessageTitulo);
@@ -296,10 +307,24 @@ public class ReceitaRC {
 		driver.findElement(By.cssSelector("div[data-tip='Deletar']")).click();
 	}
 
-	/*
-	 * @Then("mensagem {string} de desabilitar receita") public void
-	 * mensagem_de_desabilitar_receita(String string) { // Write code here that
-	 * turns the phrase above into concrete actions throw new
-	 * io.cucumber.java.PendingException(); }
-	 */
+	@When("clicar em SIM para deletar receita")
+	public void clicar_em_sim_para_deletar_receita() throws InterruptedException {
+		Thread.sleep(2000);
+		WebElement caixa = driver.findElement(By.cssSelector("div[name='content']"));
+		botaoDesabilitar = caixa.findElement(By.xpath("//button[contains(text(), 'Sim')]"));
+		botaoDesabilitar.click();
+	}
+
+	@Then("mensagem {string} de deletar receita")
+	public void mensagem_de_deletar_receita(String string) {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(1));
+		mensagem = wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("p.text-green-800")));
+		String texto = mensagem.getText();
+		Assert.assertEquals(string, texto);
+	}
+	
+	@After
+	public void fecharReceitaRC() {
+		driver.quit();
+	}
 }

@@ -9,7 +9,7 @@ import io.cucumber.junit.CucumberOptions;
 @CucumberOptions(plugin = "pretty",
 				 features = "src/test/java/features/CRUDGerenteRC.feature", 
 				 glue = "CadastrarGerente",
-				 tags = "@excluirGer")
+				 tags = "@emailGerInvalido")
 public class RunnerCadastrarGer {
 
 }
