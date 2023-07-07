@@ -12,7 +12,7 @@ Feature: Login
 
     Examples: 
       | email                 | senha  | pagina                      |
-      | lucasycosta@gmail.com | 123456 | http://44.201.232.138:3000/ |
+      | costaylucas@gmail.com | 123456 | http://44.201.232.138:3000/ |
 
   @web @login @invalido
   Scenario Outline: E-mail e/ou senha invalidos
